@@ -2,18 +2,50 @@
   <div class="nav-wrapper">
     <a href="/" class="brand-logo">Dronito's</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li>
-        <a href="/">Главная</a>
-      </li>
-      <li>
-        <a href="/vapes">Вейпы</a>
-      </li>
-      <li>
-        <a href="/liquids">Жидкости</a>
-      </li>
-      <li>
-        <a href="/add">Добавить товар</a>
-      </li>
+      {{!-- HOME PAGE --}}
+      {{#if isHomePage}}
+        <li class="active">
+          <a href="/">Главная</a>
+        </li>
+      {{else}}
+        <li>
+          <a href="/">Главная</a>
+        </li>
+      {{/if}}
+
+      {{!-- VAPES PAGE --}}
+      {{#if isVapesPage}}
+        <li class="active">
+          <a href="/vapes">Вейпы</a>
+        </li>
+      {{else}}
+        <li>
+          <a href="/vapes">Вейпы</a>
+        </li>
+      {{/if}}
+
+      {{!-- LIQUIDS PAGE --}}
+      {{#if isLiquidsPage}}
+        <li class="active">
+          <a href="/liquids">Жидкости</a>
+        </li>
+      {{else}}
+        <li>
+          <a href="/liquids">Жидкости</a>
+        </li>
+      {{/if}}
+
+
+      {{!-- ADD PAGE --}}
+      {{#if isAddPage}}
+        <li class="active">
+          <a href="/add">Добавить товар</a>
+        </li>
+      {{else}}
+        <li>
+          <a href="/add">Добавить товар</a>
+        </li>
+      {{/if}}
     </ul>
   </div>
 </nav>
