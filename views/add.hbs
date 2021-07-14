@@ -1,1 +1,26 @@
 <h1>Добавить новый товар</h1>
+
+<form action="/add" method="post">
+  <div class="input-field">
+    <input id="title" type="text" class="validate" name="title" required>
+    <label for="title">Название товара</label>
+    <span class="helper-text" data-error="Введите название товара"></span>
+  </div>
+  <div class="input-field">
+    <textarea id="description" class="materialize-textarea" name="description" required></textarea>
+    <label for="description">Описание товара (html)</label>
+    <span class="helper-text" data-error="Введите описание товара"></span>
+  </div>
+  <div class="input-field">
+    <input id="price" type="number" class="validate" name="price" required>
+    <label for="price">Цена</label>
+    <span class="helper-text" data-error="Введите цену"></span>
+  </div>
+  <div class="input-field">
+    <input id="image" type="text" class="validate" name="url" required>
+    <label for="image">URL Картинки</label>
+    <span class="helper-text" data-error="Введите URL картинки"></span>
+  </div>
+
+  <button class="btn btn-primary">Добавить</button>
+</form>

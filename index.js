@@ -14,34 +14,13 @@ app.set('view engine', 'hbs');
 app.set('views', 'views');
 
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
-  res.render('index', {
-    title: 'Dronito\'s',
-    isHomePage: true,
-  });
-});
-
-app.get('/vapes', (req, res) => {
-  res.render('vapes', {
-    title: 'Вейпы',
-    isVapesPage: true,
-  });
-});
-
-app.get('/liquids', (req, res) => {
-  res.render('liquids', {
-    title: 'Жидкости для вейпа',
-    isLiquidsPage: true,
-  });
-});
-
-app.get('/add', (req, res) => {
-  res.render('add', {
-    title: 'Добавить товар',
-    isAddPage: true,
-  });
-});
+/* ROUTES */
+app.use('/', require('./routes/home'));
+app.use('/vapes', require('./routes/vapes'));
+app.use('/liquids', require('./routes/liquids'));
+app.use('/add', require('./routes/add'));
 
 const PORT = process.env.PORT || 3000;
 
