@@ -13,6 +13,19 @@ router.get('/', async (req, res) => {
   });
 });
 
+router.post('/', async (req, res) => {
+  const vape = new Vape(
+    req.body.title,
+    req.body.description,
+    req.body.price,
+    req.body.image,
+  );
+
+  await vape.save();
+
+  res.redirect('/vapes');
+});
+
 router.get('/:id', async (req, res) => {
   const vape = await Vape.findOneById(req.params.id);
 
