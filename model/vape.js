@@ -49,6 +49,12 @@ class Vape {
       );
     });
   }
+
+  static async findOneById(id) {
+    const vapes = await Vape.getAll();
+
+    return vapes.find(vape => vape.id === id);
+  }
 }
 
 module.exports = Vape;

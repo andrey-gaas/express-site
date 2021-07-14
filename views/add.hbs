@@ -1,26 +1,57 @@
 <h1>Добавить новый товар</h1>
 
-<form action="/add" method="post">
-  <div class="input-field">
-    <input id="title" type="text" class="validate" name="title" required>
-    <label for="title">Название товара</label>
-    <span class="helper-text" data-error="Введите название товара"></span>
-  </div>
-  <div class="input-field">
-    <textarea id="description" class="materialize-textarea" name="description" required></textarea>
-    <label for="description">Описание товара (html)</label>
-    <span class="helper-text" data-error="Введите описание товара"></span>
-  </div>
-  <div class="input-field">
-    <input id="price" type="number" class="validate" name="price" required>
-    <label for="price">Цена</label>
-    <span class="helper-text" data-error="Введите цену"></span>
-  </div>
-  <div class="input-field">
-    <input id="image" type="text" class="validate" name="image" required>
-    <label for="image">URL Картинки</label>
-    <span class="helper-text" data-error="Введите URL картинки"></span>
+<div class="row">
+  <div class="col s6">
+    <h2>Вейп</h2>
+    <form action="/vape" method="post">
+      <div class="input-field">
+        <input id="title-vape" type="text" class="validate" name="title" required>
+        <label for="title-vape">Название товара</label>
+        <span class="helper-text" data-error="Введите название товара"></span>
+      </div>
+      <div class="input-field">
+        <textarea id="description-vape" class="materialize-textarea" name="description" required></textarea>
+        <label for="description-vape">Описание товара (html)</label>
+        <span class="helper-text" data-error="Введите описание товара"></span>
+      </div>
+      <div class="input-field">
+        <input id="price-vape" type="number" class="validate" name="price" required>
+        <label for="price-vape">Цена</label>
+        <span class="helper-text" data-error="Введите цену"></span>
+      </div>
+      <div class="input-field">
+        <input id="image-vape" type="text" class="validate" name="image" required>
+        <label for="image-vape">URL Картинки</label>
+        <span class="helper-text" data-error="Введите URL картинки"></span>
+      </div>
+      <button class="btn btn-primary">Добавить</button>
+    </form>
   </div>
 
-  <button class="btn btn-primary">Добавить</button>
-</form>
+  <div class="col s6">
+    <h2>Жидкость</h2>
+    <form action="/liquid" method="post">
+      <div class="input-field">
+        <input id="title-liquid" type="text" class="validate" name="title" required>
+        <label for="title-liquid">Название товара</label>
+        <span class="helper-text" data-error="Введите название товара"></span>
+      </div>
+      <div class="input-field">
+        <textarea id="description-liquid" class="materialize-textarea" name="description" required></textarea>
+        <label for="description-liquid">Описание товара (html)</label>
+        <span class="helper-text" data-error="Введите описание товара"></span>
+      </div>
+      <div class="input-field">
+        <input id="price-liquid" type="number" class="validate" name="price" required>
+        <label for="price-liquid">Цена</label>
+        <span class="helper-text" data-error="Введите цену"></span>
+      </div>
+      <div class="input-field">
+        <input id="image-liquid" type="text" class="validate" name="image" required>
+        <label for="image-liquid">URL Картинки</label>
+        <span class="helper-text" data-error="Введите URL картинки"></span>
+      </div>
+      <button class="btn btn-primary">Добавить</button>
+    </form>
+  </div>
+</div>

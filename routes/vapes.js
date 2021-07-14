@@ -13,4 +13,13 @@ router.get('/', async (req, res) => {
   });
 });
 
+router.get('/:id', async (req, res) => {
+  const vape = await Vape.findOneById(req.params.id);
+
+  res.render('vape', {
+    title: vape.title,
+    vape,
+  });
+});
+
 module.exports = router;
