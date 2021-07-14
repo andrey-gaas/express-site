@@ -6,6 +6,11 @@ html, body {
   padding: 0 2rem;
 }
 
+.card-title {
+  width: 100%;
+  background: rgba(0, 0, 0, .5);
+}
+
 .product {
   margin-top: 50px;
 }
