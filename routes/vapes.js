@@ -35,4 +35,19 @@ router.get('/:id', async (req, res) => {
   });
 });
 
+router.get('/edit/:id', async (req, res) => {
+  const vape = await Vape.findOneById(req.params.id);
+
+  res.render('edit-vape', {
+    title: `Редактировать: ${vape.title}`,
+    vape,
+  });
+});
+
+router.post('/edit/:id', async (req, res) => {
+  await Vape.updateOne(req.params.id, req.body);
+
+  res.redirect(`/vapes/${req.params.id}`);
+});
+
 module.exports = router;

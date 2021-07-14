@@ -55,6 +55,28 @@ class Vape {
 
     return vapes.find(vape => vape.id === id);
   }
+
+  static async updateOne(id, body) {
+    const vapes = await Vape.getAll();
+
+    const index = vapes.findIndex(vape => vape.id === id);
+
+    body.id = id;
+
+    vapes[index] = body;
+
+    return new Promise((resolve, reject) => {
+      fs.writeFile(
+        path.join(__dirname, '..', 'data', 'vapes.json'),
+        JSON.stringify(vapes),
+        (error) => {
+          if (error) reject(error);
+          else resolve();
+        }
+      );
+    });
+  }
+
 }
 
 module.exports = Vape;
