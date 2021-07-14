@@ -1,1 +1,27 @@
 <h1>Вейпы и POD-системы</h1>
+
+{{#if vapes.length}}
+
+  <div class="row">
+    {{#each vapes}}
+        <div class="col s4">
+          <div class="card">
+            <div class="card-image">
+              <img src="{{image}}" alt="{{title}}">
+              <span class="card-title">{{title}}</span>
+            </div>
+            <div class="card-content">
+              <p>{{description}}</p>
+              <p>Цена: {{price}}</p>
+            </div>
+            <div class="card-action">
+              <a href="/courses/{{id}}">Открыть</a>
+            </div>
+          </div>
+        </div>
+    {{/each}}
+  </div>
+
+{{else}}
+  <p>Товаров нет</p>
+{{/if}}

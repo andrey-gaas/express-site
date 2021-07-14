@@ -1,11 +1,15 @@
 const { Router } = require('express');
+const Vape = require('../model/vape');
 
 const router = Router();
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
+  const vapes = await Vape.getAll();
+
   res.render('vapes', {
     title: 'Вейпы',
     isVapesPage: true,
+    vapes,
   });
 });
 
